@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AoHechizos - Creador de Hechizos Simple</title>
+ <link rel="stylesheet" href="../css/style.css">
+ <link rel="icon" href="../wizard-hat.png">
+<style>
+textarea{width:calc(100% - 80px); vertical-align: top}
+
+main{ flex-direction: column; }
+
+
+summary {
+  color: goldenrod;
+  text-align: left;
+}
+
+footer{display: flex; justify-content: center; max-width: 600px; margin:auto;}
+
+
+#cargaHechizo{margin-bottom:36px;}
+#cargaHechizo textarea {height:128px;  margin:18px auto; }
+
+input.msg{width:500px;}
+
+
+
+</style>
+</head>
+<body>
+<nav>
+  <h1>AoHechizos
+</h1>
+  <div>
+          <a href="../aohechizos.html">Home</a>
+        <a href="./libro.html">Libro</a>
+        <a href="#">Creador de Hechizos</a>
+        </div>
+</nav>
+<h2>Creador de Hechizos Simple</h2>
+
+
+
+    <main>
+
+<details id="cargaHechizo">
+<summary>Cargar datos del hechizo en formato array</summary>
+      <textarea id="hechizoArray" placeholder="Ingrese el hechizo en formato de array"></textarea>
+  <button id="cargarHechizo">Cargar Hechizo</button>
+</details>
+
+
+<table id="tablaHechizos">
+  <tbody>
+    <tr style="background-color:#8a3ab9">
+      <th colspan="1"><strong>Id</strong>: <input type="text" name="id" placeholder="[HECHIZO#]"></th>
+      <th colspan="3"><strong>Nombre</strong>: <input type="text" name="nombre" placeholder="Nombrar Hechizo"></th>
+    </tr>
+    <tr>
+      <td colspan="3"><strong>Desc</strong>: <textarea name="desc" maxlength="250" placeholder="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, facilis! Neque modi quibusdam mollitia cupiditate ut, quidem natus quo aliquid nisi distinctio eaque corrupti, numquam harum minima voluptates molestias nesciunt."></textarea></td>
+      <td colspan="1" style="text-align:center;"><strong>PalabrasMagicas</strong>: <input type="text" name="palabras_magicas" placeholder="Lorem Ipsum"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>HechizeroMsg</strong>: <input class="msg"  type="text" name="hechizero_msg" placeholder="Mensaje"></td>
+      <td colspan="2"><strong>PropioMsg</strong>: <input class="msg" type="text" name="propio_msg" placeholder="Mensaje"></td>
+    </tr>
+    <tr>
+      <td><strong>TargetMsg</strong>: <input class="msg" type="text" name="target_msg" placeholder="Mensaje"></td>
+      <td title="Tipos: 1 actúan sobre HP, MANA, STA, HAM y SED. 2 actúan sobre los estados de los usuarios. 3 invocación. 4 materializa. 5 metamorfosis."><strong>Tipo</strong>: <input type="number" name="tipo" value="0"></td>
+      <td><strong>WAV</strong>: <select name="wav" id="wav">
+        </select> <span id="play" style="cursor: pointer; border: 2px solid rgb(138, 58, 185); border-radius: 50%; padding: 5px; color: white;">▶︎</span></td>
+      <td><strong>FXgrh</strong>: <input type="number" name="fx_grh" value="0"></td>
+    </tr>
+    <tr>
+  <td><strong>Loops</strong>: <input type="number" name="loops" value="0"></td>
+  <td><strong>MinSkill</strong>: <input type="number" name="min_skill" value="0"></td>
+  <td><strong>ManaRequerido</strong>: <input type="number" name="mana_requerido" value="0"></td>
+  <td><strong>StaRequerido</strong>: <input type="number" name="sta_requerido" value="0"></td>
+</tr>
+<tr>
+  <td title="Targets: 1. Usuario. 2. Npc. 3. Usuario y Npc. 4. Terreno."><strong>Target</strong>: <input type="number" name="target" value="0"></td>
+  <td><strong>SubeHP</strong>: <input type="number" name="sube_hp" value="0"></td>
+  <td><strong>MinHP</strong>: <input type="number" name="min_hp" value="0"></td>
+  <td><strong>MaxHP</strong>: <input type="number" name="max_hp" value="0"></td>
+</tr>
+<tr>
+  <td><strong>SubeMana</strong>: <input type="number" name="sube_mana" value="0"></td>
+  <td><strong>MinMana</strong>: <input type="number" name="min_mana" value="0"></td>
+  <td><strong>MaxMana</strong>: <input type="number" name="max_mana" value="0"></td>
+  <td><strong>SubeSta</strong>: <input type="number" name="sube_sta" value="0"></td>
+</tr>
+<tr>
+  <td><strong>MinSta</strong>: <input type="number" name="min_sta" value="0"></td>
+  <td><strong>MaxSta</strong>: <input type="number" name="max_sta" value="0"></td>
+  <td><strong>SubeHam</strong>: <input type="number" name="sube_ham" value="0"></td>
+  <td><strong>MinHam</strong>: <input type="number" name="min_ham" value="0"></td>
+</tr>
+<tr>
+  <td><strong>MaxHam</strong>: <input type="number" name="max_ham" value="0"></td>
+  <td><strong>SubeSed</strong>: <input type="number" name="sube_sed" value="0"></td>
+  <td><strong>MinSed</strong>: <input type="number" name="min_sed" value="0"></td>
+  <td><strong>MaxSed</strong>: <input type="number" name="max_sed" value="0"></td>
+</tr>
+<tr>
+  <td><strong>SubeAG</strong>: <input type="number" name="sube_ag" value="0"></td>
+  <td><strong>MinAG</strong>: <input type="number" name="min_ag" value="0"></td>
+  <td><strong>MaxAG</strong>: <input type="number" name="max_ag" value="0"></td>
+  <td><strong>SubeFU</strong>: <input type="number" name="sube_fu" value="0"></td>
+</tr>
+<tr>
+  <td><strong>MinFU</strong>: <input type="number" name="min_fu" value="0"></td>
+  <td><strong>MaxFU</strong>: <input type="number" name="max_fu" value="0"></td>
+  <td><strong>SubeCA</strong>: <input type="number" name="sube_ca" value="0"></td>
+  <td><strong>MinCA</strong>: <input type="number" name="min_ca" value="0"></td>
+</tr>
+<tr>
+  <td><strong>MaxCA</strong>: <input type="number" name="max_ca" value="0"></td>
+  <td><strong>Invisibilidad</strong>: <input type="number" name="invisibilidad" value="0"></td>
+  <td><strong>Paraliza</strong>: <input type="number" name="paraliza" value="0"></td>
+  <td><strong>Inmoviliza</strong>: <input type="number" name="inmoviliza" value="0"></td>
+</tr>
+<tr>
+  <td><strong>RemoverParalisis</strong>: <input type="number" name="remover_paralisis" value="0"></td>
+  <td><strong>RemoverEstupidez</strong>: <input type="number" name="remover_estupidez" value="0"></td>
+  <td><strong>RemueveInvisibilidadParcial</strong>: <input type="number" name="remueve_invisibilidad_parcial" value="0"></td>
+  <td><strong>CuraVeneno</strong>: <input type="number" name="cura_veneno" value="0"></td>
+</tr>
+<tr>
+  <td><strong>Envenena</strong>: <input type="number" name="envenena" value="0"></td>
+  <td><strong>Revivir</strong>: <input type="number" name="revivir" value="0"></td>
+  <td><strong>Ceguera</strong>: <input type="number" name="ceguera" value="0"></td>
+  <td><strong>Estupidez</strong>: <input type="number" name="estupidez" value="0"></td>
+</tr>
+<tr>
+  <td><strong>Invoca</strong>: <input type="number" name="invoca" value="0"></td>
+  <td><strong>NumNpc</strong>: <input type="number" name="num_npc" value="0"></td>
+  <td><strong>Cant</strong>: <input type="number" name="cant" value="0"></td>
+  <td><strong>Mimetiza</strong>: <input type="number" name="mimetiza" value="0"></td>
+</tr>
+<tr>
+  <td><strong>Materializa</strong>: <input type="number" name="materializa" value="0"></td>
+  <td><strong>itemindex</strong>: <input type="number" name="itemindex" value="0"></td>
+  <td><strong>StaffAffected</strong>: <input type="number" name="staff_affected" value="0"></td>
+  <td><strong>NeedStaff</strong>: <input type="number" name="need_staff" value="0"></td>
+</tr>
+<tr>
+  <td><strong>Resis</strong>: <input type="number" name="resis" value="0"></td>
+</tr>
+
+  </tbody>
+</table>
+
+</main>
+<FOOTER>
+<button id="exportarHechizoAO">Exportar Hechizo en Formato AO</button>
+<button id="exportarHechizoArray">Exportar Hechizo a Array</button>
+<button id="exportarHechizoJSON">Exportar Hechizo a JSON</button>
+
+
+</FOOTER>
+<a href="https://github.com/nachocorbillon" style="display:none">Github</a>
+
+<script src="../js/creador.js"></script>
+<script src="../js/cargarhechizo.js"></script>
+
+</body>
+</html>

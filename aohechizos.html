@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AoHechizos - Argentum v0.13</title>
+<link rel="icon" href="./wizard-hat.png">
+<link rel="stylesheet" href="./css/style.css">
+	 <style>
+	 	
+	 	body{}
+
+	 	h1{ display:none }
+	 	main {
+background: white; color: purple;
+	 		display: flex;
+	 		flex-direction: row;
+	 		gap: 36px;
+	 		padding:36px;
+	 		border-radius:18px}
+
+	 		main ul {font-size: 24px;}
+
+	 		li{padding:0; margin:48px 0}
+
+	 		li:first-child{list-style-type: none; font-size:36px}
+
+	 		li a:not(:hover) {color:black; text-decoration: none}
+
+	 		li a {color:purple}
+
+	 		#icon1{width:38px; height:38px;margin:0; position:absolute;
+	 			top:11px; right:8px}
+	 		#icon2{width:22px; height:22px;margin:0; position:absolute;
+	 			top:18px; right:36px; display:none}
+
+	 </style>
+</head>
+<body>
+	<h1>Ao Hechizos</h1>
+	<main>	 <img src="./Dumbledore.jpg" alt="Dumbledore ilustrado por Dolores Avedaño" title="Dumbledore ilustrado por Dolores Avedaño" />
+<ul>
+	<li>Ao Hechizos - Utilidades:</li>
+	<li>
+	<a href="./app/libro.html">Libro de Hechizos - Lee archivo Hechizos.dat</a>
+</li>
+<li>
+	<a href="./app/creador.html">Creador de Hechizos Simple</a>
+</li>
+<li><a href="#" id="separador">Copiar <span style="color:purple">Separador de Hechizos</span> al Portapapeles</a></li>
+</ul>
+<a href="https://github.com/nachocorbillon"><img src="./frontpage.png" id="icon1" alt="github" title="autor"></a>
+<a href="https://nachocorbillon.github.io"><img src="./wordpad.png" id="icon2" alt="cv" title="cv"></a>
+</main>
+</body>
+<script>document.getElementById("separador").addEventListener("click", function() {
+    const texto = "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n" +
+                  "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&";
+    
+    const elementoTemporal = document.createElement("textarea");
+    elementoTemporal.value = texto;
+    document.body.appendChild(elementoTemporal);
+    elementoTemporal.select();
+    document.execCommand("copy");
+    document.body.removeChild(elementoTemporal);
+    alert("Separator Imitatum!");
+});</script>
+</html>

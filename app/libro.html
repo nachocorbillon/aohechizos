@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AoHechizos - Libro de Hechizos</title>
+ <link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="../wizard-hat.png">
+</head>
+<body>
+  <nav>
+  <h1>AoHechizos
+</h1>
+  <div>
+          <a href="../aohechizos.html">Home</a>
+        <a href="#">Libro</a>
+        <a href="./creador.html">Creador de Hechizos</a>
+        </div>
+</nav>
+<header>
+<h2>Libro de Hechizos</h2>
+ 
+<h3>Ingrese su archivo hechizos.dat</h3>
+    <input type="file" id="fileInput" accept=".dat">
+    <button id="cargar">Cargar Hechizos</button>
+    </header>
+    <div id="navegacion">
+        <button id="anterior">Anterior</button>
+        <div id="numeroHechizo"></div>
+        <button id="siguiente">Siguiente</button>
+    </div>
+    <main>
+    <section id="hechizo">
+        <!-- Aquí se mostrará la información del hechizo -->
+    </section>
+    <section>
+      <h3>Índice</h3>
+    <ol id="listaHechizos">
+  <!-- Aquí se generará la lista de enlaces -->
+    </ol>
+    <div id="paginacion">
+  <button id="anteriorPagina">Anterior</button>
+  <button id="siguientePagina">Siguiente</button>
+</div>
+</section>
+
+
+</main>
+<FOOTER>
+<button id="exportarHechizoAO">Exportar Hechizo</button>
+<button id="exportarHechizoArray">Exportar Hechizo a Array</button>
+<button id="exportarHechizoJSON">Exportar Hechizo a JSON</button>
+<button id="exportarTodoJSON">Exportar TODO a JSON</button>
+<button id="exportarTodoArrays">Exportar TODO a Arrays</button>
+
+</FOOTER>
+
+<a href="https://github.com/nachocorbillon" style="display:none">Github</a>
+<script src="../js/libro.js"></script>
+
+</body>
+</html>
